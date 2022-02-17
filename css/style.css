@@ -75,11 +75,9 @@ nav a {
   text-decoration: none;
 }
 /* Requirement 2 code here*/
-a:hover{
-  text-decoration: underline;
-  text-decoration-style: wavy;
+a:hover {
+  text-decoration: underline wavy;
 }
-
 
 a.skip{
   background: white;
@@ -88,67 +86,70 @@ a.skip{
   transition: left 1s ease-out;
   z-index: 1;
   /* Requirement 3 code here*/
-  position:absolute;
-  left:-500px;
+  position: absolute;
+  left: -500px;
 }
 
 
 /* Requirement 4 code here*/
-a:focus{
+nav a:focus{
   border-top: 2px solid yellow;
+  outline: none;
 }
 
 .container{
   /* Requirement 5 code here*/
-display: grid;
-grid-template-columns: 1fr 5fr 1fr;
-row-gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  row-gap: 30px;
 }
 
 /* Requirements 6-10 here: */
-
-.intro{
- background: url('../images/header.jpg');
- background-color: #707070;
- min-height: 400px;
- background-attachment: fixed;
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
+.intro {
+  background: url('../images/header.jpg') #DDDDDD ;
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.about, .clients, .method, .contact{
-  grid-column: 2/3;
+.about, .clients, .method, .contact {
+  grid-column: 2 / span 1;
 }
 
-img{
+img {
   width: 100%;
 }
-.about-image, .clients-image, .method-image, .contact-image{
-  grid-column: 1/4;
+
+.about-image, .clients-image, .method-image, .contact-image {
+  grid-column: 1 / 4;
   max-height: 500px;
   overflow: hidden;
 }
- .about, .about-image{
-   grid-row: 1/2;
- }
- .clients, .clients-image{
-  grid-row: 2/3;
+
+.about, .about-image {
+  grid-row: 1 / 2;
 }
 
-.method, .method-image{
-  grid-row: 3/4;
+.clients, .clients-image {
+  grid-row: 2 / 3;
 }
 
-.contact, .contact-image{
-  grid-row: 4/5;
+.method, .method-image {
+  grid-row: 3 / 4;
 }
 
-.txt{
-  text-align: center;
+.contact, .contact-image {
+  grid-row: 4 / 5;
+}
+
+.text {
+  align-self: center;
   max-height: 25vh;
   overflow: scroll;
 }
+
 @media screen and (min-width: 700px){
   nav{
     padding-top: 35px;
@@ -161,32 +162,25 @@ img{
     margin-right:0;
   }
 
-
   /* Requirements 12-15 here: */
-.skip:focus{
-left:0px;
-top: 20px;
-position: absolute;
+  .skip:focus {
+    left: 0px;
+    top: 20px;
+  }
 
+  .container {
+    grid-template-rows:repeat(4, 300px);
+    grid-template-columns:50px auto 500px auto 50px;
+  }
+
+  .about, .method, .clients-image, .contact-image {
+    grid-column: 3 / span 2;
+  }
+
+  .clients, .contact, .about-image, .method-image {
+    grid-column: 2 / span 2;
+  }
 }
-.container{
-  display: grid;
-  grid-template-columns: 50px auto 500px auto 50px;
-  grid-template-rows: 300px 300px 300px 300px;
-}
-
-.about, .method, .clients-image, .contact-image {
-  grid-column: 3 / span 2;
-}
-.clients, .contact, .about-image, .method-image{
-  grid-column: 2 / span 2;
-}
-}
-
-
-
-
-
 
 /** Code for prefers reduced motion **/
 /* Make no changes below this line.
