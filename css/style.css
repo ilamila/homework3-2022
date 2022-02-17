@@ -88,7 +88,7 @@ a.skip{
   z-index: 1;
   /* Requirement 3 code here*/
   position: absolute;
-left:-500px;
+  left:-500px;
 }
 
 
@@ -107,7 +107,7 @@ row-gap: 30px;
 /* Requirements 6-10 here: */
 
 .intro{
- background-image: url('../images/header.jpg') #DDDDDD;
+ background: url('../images/header.jpg') #DDDDDD;
  min-height: 400px;
  background-attachment: fixed;
   background-position: center;
